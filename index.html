@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nifty Candlestick Chart</title>
+</head>
+<body>
+    <h1>Nifty Candlestick Chart with Bullish Volume Imbalance</h1>
+
+    <form method="POST" action="/">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required>
+        <button type="submit" name="fetch_nifty">Fetch Nifty Data</button>
+    </form>
+
+    <div>
+        <!-- Display the candlestick chart if available -->
+        {% if chart_file %}
+        <h2>Candlestick Chart</h2>
+        <img src="{{ chart_file }}" alt="Nifty Candlestick Chart">
+        {% endif %}
+    </div>
+
+    <div>
+        <!-- Display the table if available -->
+        {% if table_file %}
+        <h2>Bullish Volume Imbalance Bottom Values</h2>
+        <img src="{{ table_file }}" alt="Bullish Volume Imbalance Table">
+        {% endif %}
+    </div>
+</body>
+</html>
